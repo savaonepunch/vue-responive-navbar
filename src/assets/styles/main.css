@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+    font-family: GilroyExtraHeavy;
+    src: url(../fonts/Gilroy-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: GilroyBlack;
+    src: url(../fonts/Gilroy-Black.ttf);
+}
+
+body {
+    transition: background-color .4s;
+}
+
+body.dark-mode{
+    margin: 0;
+    padding: 0;
+    background-color: #1b3937;
+
+    /* background: url(../images/bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+
+    font-family: 'DM Sans', sans-serif;
+    color: white;
+}
+
+body.light-mode{
+    margin: 0;
+    padding: 0;
+    background-color: #e4fff5;
+
+    /* background: url(../images/bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+
+    font-family: 'DM Sans', sans-serif;
+    color: black;
+}
+
+div.headerMobile {
+    display: none;
+}
+
+div.headerMobileOpen {
+    display: none;
+}
+
+body.dark-mode a {
+    text-decoration: none;
+    color: white;
+    padding: 0;
+}
+
+body.light-mode a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 0;
+}
+
+div.headerDesktop {
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    background-color: #001a0bb9;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+
+    position: fixed;
+    z-index: 10;
+}
+
+div.headerDesktop .navList {
+    display: flex;
+}
+
+div.headerDesktop .navList .navItem {
+    margin: 0 20px;
+}
+
+body.dark-mode div.headerDesktop .navList .navItem:last-child {
+    color: white;
+    transition: .3s;
+    padding: 0 20px;
+}
+
+body.light-mode div.headerDesktop .navList .navItem:last-child {
+    color: rgb(0, 0, 0);
+    transition: .3s;
+    padding: 0 20px;
+}
+
+div.headerDesktop .navList .navItem:last-child:hover {
+    color: #00ff88 !important;
+    cursor: pointer;
+}
+
+div.headerDesktop .navList .navItem a {
+    display: inline-block;
+    position: relative;
+}
+
+div.headerDesktop .navList .navItem a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #00ff88;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+div.headerDesktop .navList .navItem a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+div.headerDesktop .logo img {
+    max-width: 150px;
+    display: block;
+}
+
+div.content {
+    max-width: 1920px;
+    padding: 80px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.card {
+    border-radius: 10px;
+    max-width: 400px;
+    height: 600px;
+    border: 1px solid #00ff88;
+    margin: 20px 0;
+    padding: 30px;
+    transition: .3s;
+}
+
+div.card:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 255, 115, 0.623) 0px 8px 24px;
+}
+
+div.card h1 {
+    margin-top: 0;
+}
+
+div.card img {
+    width: 100%;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: 0.4s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+
+@media only screen and (max-width: 796px) {
+    div.content {
+        padding: 80px 40px;
+    }
+
+    div.headerDesktop {
+        display: none;
+    }
+
+    div.headerMobile {
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+
+        background-color: #001a0bb9;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+
+        position: fixed;
+        z-index: 10;
+    }
+
+    div.headerMobile .logo {
+        margin: auto;
+    }
+
+    div.headerMobile .logo img {
+        max-width: 180px;
+        display: block;
+    }
+
+    div.headerMobile .menuBtn {
+        max-width: 50px;
+        position: absolute;
+    }
+
+    div.headerMobile .menuBtn:hover {
+        cursor: pointer;
+    }
+
+    div.headerMobile .menuBtn img {
+        max-width: 40px;
+        display: block;
+    }
+
+    div.headerMobileOpen {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #001a0bb9;
+
+        position: fixed;
+        z-index: 10;
+        border-right: 1px solid rgba(255, 255, 255, 0.356);
+    }
+
+    div.headerMobileOpen .logo {
+        position: absolute;
+        top: 20px;
+    }
+
+    div.headerMobileOpen .logo img {
+        max-width: 180px;
+        display: block;
+    }
+
+    div.headerMobileOpen .menuBtn {
+        max-width: 50px;
+        position: absolute;
+        top: 28px;
+        left: 28px;
+    }
+
+    div.headerMobileOpen .menuBtn:hover {
+        cursor: pointer;
+    }
+
+    div.headerMobileOpen .menuBtn img {
+        max-width: 25px;
+        display: block;
+    }
+
+    div.headerMobileOpen div.navList {
+        text-align: center;
+        font-size: 40px;
+        font-family: GilroyBlack;
+    }
+
+    div.headerMobileOpen div.themeBtn i {
+        position: absolute;
+        top: 40px;
+        right: 25px;
+        transition: .3s;
+    }
+
+    div.headerMobileOpen div.themeBtn i:hover {
+        color: #00ff88;
+        cursor: pointer;
+    }
+
+    div.headerMobileOpen div.navList div.navItem {
+        margin: 30px 0;
+    }
+
+    div.headerMobileOpen .navList .navItem a {
+        display: inline-block;
+        position: relative;
+    }
+
+    div.headerMobileOpen .navList .navItem a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 6px;
+        bottom: -5px;
+        left: 0;
+        background-color: #00ff88;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    div.headerMobileOpen .navList .navItem a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    div.headerMobile {
+        background-color: rgba(255, 255, 255, 0.048);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+
+    div.headerMobileOpen {
+        background-color: rgba(0, 39, 15, 0.151);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(15px);
+    }
+
+    div.headerDesktop {
+        background-color: rgba(255, 255, 255, 0.048);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
